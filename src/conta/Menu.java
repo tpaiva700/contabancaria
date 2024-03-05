@@ -1,11 +1,26 @@
 package conta;
 
 import java.util.Scanner;
+
+import conta.model.Conta;
 import conta.util.Cores;
+
 
 public class Menu {
 
 	public static void main(String[] args) {
+		//Instanciando um Objeto 
+		Conta conta1 = new Conta(123456, 0123, 1, "Shigaraki Tomura", 1300.0f );
+		
+		System.out.println("Nome do Titular " + conta1.getTitular());
+		System.out.println("Saldo em Conta: " + conta1.getSaldo());
+		System.out.println("  ");
+		
+		conta1.setSaldo(950.0f);
+		System.out.println("Saldo em Conta: " + conta1.getSaldo());
+		System.out.println("  ");
+		
+		
 		Scanner sc = new Scanner(System.in);
 
 		// Criando nosso menu principal

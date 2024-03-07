@@ -3,23 +3,34 @@ package conta;
 import java.util.Scanner;
 
 import conta.model.Conta;
+import conta.model.ContaCorrente;
 import conta.util.Cores;
+import conta.model.ContaPoupanca;
 
 
 public class Menu {
 
 	public static void main(String[] args) {
 		//Instanciando um Objeto 
-		Conta conta1 = new Conta(123456, 0123, 1, "Shigaraki Tomura", 1300.0f );
 		
-		System.out.println("Nome do Titular " + conta1.getTitular());
-		System.out.println("Saldo em Conta: " + conta1.getSaldo());
-		System.out.println("  ");
+		//Teste ContaCorrente
+		ContaCorrente contaC2 = new ContaCorrente(123457, 0123, 1, "Izuku Midoriya", 1300.0f, 1000.0f);
+		contaC2.visualizar();
+		contaC2.sacar(12000.0f);
+		contaC2.visualizar();
+		contaC2.depositar(5000.0f);
+		contaC2.visualizar();
+		System.out.println("**********************************************************");
 		
-		conta1.setSaldo(950.0f);
-		System.out.println("Saldo em Conta: " + conta1.getSaldo());
-		System.out.println("  ");
+		//Teste ContaPoupanca
+		ContaPoupanca contaP = new ContaPoupanca(123458, 0123, 2, "Ochaco Uraraka", 1300.0f, 18);
+		contaP.visualizar();
+		contaP.sacar(1000.0f);
+		contaP.visualizar();
+		contaP.depositar(5000.0f);
+		contaP.visualizar();
 		
+		System.out.println("************************************************************");
 		
 		Scanner sc = new Scanner(System.in);
 
